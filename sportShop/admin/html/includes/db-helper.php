@@ -344,6 +344,12 @@ class DBHelper
         $query = "delete from customer where id=$id";
         return mysqli_query($this->con, $query);
     }
+    public function getUserByEmail($email)
+    {
+        $query = "SELECT email FROM customer where email='$email'";
+        $result = mysqli_query($this->con, $query);
+        return mysqli_fetch_assoc($result);
+    }
 
     /*
      * order
