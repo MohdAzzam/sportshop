@@ -140,7 +140,14 @@ if (isset($_POST['add-to-cart'])){
                         <h3 class="head"><?=$product['name_pro']; ?></h3>
                         <div class="price d-flex align-items-center"><span class="lnr lnr-tag"></span> <span class="ml-10">&dollar;<?=$product['price'];?></span></div>
                         <div class="category">Category: <span><?=$product['name']; ?></span></div>
-                        <div class="available">Availibility: <span>In Stock</span></div>
+                        <div class="available">Availibility:<?php
+                         if($product['quantity']==0)
+                         {echo "<span class='badge'>Out Of Stock</span>";}
+                     else{
+                        echo "<span class='badge'>In Stock</span>";
+                     }
+
+                            ?></div>
                     </div>
                     <div class="middle">
                         <p class="content"><?=$product['description']?></p>
