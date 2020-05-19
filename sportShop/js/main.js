@@ -375,6 +375,30 @@ $(document).ready(function () {
     init();
 
 //------- End Quantity Increase & Decrease Value --------//
+    $("#user_email").change(function () {
+        //get selected parent option
+        var user_email = $("#user_email").val();
+        // alert(user_email);
+        $.ajax(
+            {
+                type: "GET",
+                url: "name.php?user_email=" + user_email,
+                success: function (data) {
+
+                    if (data != "") {
+                        $("#s7").css("visibility", "hidden");
+                        $("#la").css("visibility", "");
+                        $("#save").prop("disabled", true);
+
+                    } else {
+                        $("#s7").css("visibility", "");
+                        $("#la").css("visibility", "hidden");
+                        $("#save").prop("disabled", false);
+                    }
+
+                }
+            });
+    });
 
 
 });
