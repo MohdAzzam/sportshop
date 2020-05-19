@@ -95,26 +95,28 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             </div>
 
         </div>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="index.php">
-                <img src="img/logo.png" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="#catagory">Category</a></li>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.php">
+                    <img src="img/logo.png" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end align-items-center"
+                     id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="#catagory">Category</a></li>
 
-                    <!-- Dropdown -->
+                        <!-- Dropdown -->
 
-                </ul>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 </header>
 <!-- End Header Area -->
 
@@ -142,8 +144,11 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 <h3 class="billing-title text-center">Login</h3>
                 <p class="text-center mt-80 mb-40">Welcome back! Sign in to your account </p>
                 <form method="post">
+
                     <input name="email" type="text" placeholder="Email*" onfocus="this.placeholder=''"
-                           onblur="this.placeholder = 'Email*'" required class="common-input mt-20">
+                           onblur="this.placeholder = 'Email*'" required class="common-input mt-20" id="user-email">
+
+
                     <input name="password" type="password" placeholder="Password*" onfocus="this.placeholder=''"
                            onblur="this.placeholder = 'Password*'" required class="common-input mt-20">
                     <div class="form-group">
@@ -164,13 +169,17 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 <form action="#" method="post">
                     <input name="name" type="text" placeholder="Full name*" onfocus="this.placeholder=''"
                            onblur="this.placeholder = 'Full name*'" required class="common-input mt-20">
-                    <input name="email" type="email" placeholder="Email address*" onfocus="this.placeholder=''"
+                    <div class="form-group">
+                    <input name="email" type="email" id="user_email" placeholder="Email address*" onfocus="this.placeholder=''"
                            onblur="this.placeholder = 'Email address*'" required class="common-input mt-20">
+                        <span id="la" style="color: black;visibility:hidden "><i class="fa-minus-square"></i>Email ALredy Taken</span>
+                        <span style=" color: black;visibility:hidden " id="s7"><i class="fa-check-square"></i>Go A Head</span>
+                    </div>
                     <input name="address" type="text" placeholder="Your address*" onfocus="this.placeholder=''"
                            onblur="this.placeholder = ' address*'" required class="common-input mt-20">
                     <input name="password" type="password" placeholder="Password*" onfocus="this.placeholder=''"
                            onblur="this.placeholder = 'Password*'" required class="common-input mt-20">
-                    <button name="add" class="view-btn color-2 mt-20 w-100"><span>Register</span></button>
+                    <button name="add" id="save" class="view-btn color-2 mt-20 w-100"><span>Register</span></button>
                 </form>
             </div>
         </div>
